@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    padding: 15px 5px;
+    justify-content: space-evenly;
+    background: blue;
+}
+
+.pagination a {
+    color: white;
+    padding: 10px;
+}
+
+.pagination a:hover {
+    cursor: pointer;
+    color: gray;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+.active-page {
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+.break {
+    pointer-events: none;
+}
+
