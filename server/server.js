@@ -18,6 +18,10 @@ app.use(cors({
     exposedHeaders: ['Content-Length', 'Authorization']
 }));
 
+app.use('/posts', posts);
+app.use('/users', users);
+app.use('/comments', comments);
+
 //MERN APP SETUP FOR PRODUCTION 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
@@ -26,12 +30,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
     });
 }
-
-
-
-app.use('/posts', posts);
-app.use('/users', users);
-app.use('/comments', comments);
 //SERVER
 app.listen(process.env.PORT, () => {
     console.log(`Server Up At ${process.env.PORT}`);
