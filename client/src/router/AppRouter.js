@@ -38,7 +38,7 @@ const AppRouter = () => {
                         component={Dashboard}
                     />
                     <Route
-                        exact path="/posts"
+                        exact path="/blogPosts"
                         component={Posts}
                     />
                     <PrivateRoute

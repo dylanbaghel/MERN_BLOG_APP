@@ -43,7 +43,7 @@ const Header = (props) => {
                 <div>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link to="/posts" className="nav-link">Posts</Link>
+                        <Link to="/blogPosts" className="nav-link">Posts</Link>
                     </li>
                     {isAuthenticated ? privateLinks : publicLinks}
                 </ul>
