@@ -48,13 +48,13 @@ class Dashboard extends React.Component {
                                                 post.published ? (
                                                     <Link
                                                         className="btn btn-dark"
-                                                        to={`/posts/${post._id}`}
+                                                        to={`/post/${post._id}`}
                                                     >
                                                         View Post
                                                     </Link>
                                                 ) : (
                                                         <Link
-                                                            to={`/posts/${post._id}`}
+                                                            to={`/post/${post._id}`}
                                                             className="btn btn-dark"
                                                         >
                                                             Preview

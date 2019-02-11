@@ -9,7 +9,7 @@ import NotFound from './NotFound';
 import Loading from './Loading';
 
 class EditPost extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         this.props.startSetViewPost(this.props.match.params.postId);
     }
 

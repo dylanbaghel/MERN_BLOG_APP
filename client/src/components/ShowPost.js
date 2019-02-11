@@ -11,7 +11,7 @@ import Loading from './Loading';
 import NotFound from './NotFound';
 
 class ShowPost extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         this.props.startSetViewPost(this.props.match.params.postId);
     }
 
