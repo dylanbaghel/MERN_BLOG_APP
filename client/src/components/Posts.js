@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ReactPaginate from 'react-js-pagination';
 
 import Post from './Post';
-import { startSetPosts } from './../action/postActions';
+import { startSetPosts, setPosts, setPages } from './../action/postActions';
 import Loading from './Loading';
 
 class Posts extends React.Component {
@@ -25,6 +25,11 @@ class Posts extends React.Component {
             this.props.history.push(`?pageNo=${page}`);
             this.props.startSetPosts();
         });
+    }
+
+    componentWillUnmount() {
+        this.props.setPosts([], null);
+        this.props.setPages(null);
     }
 
     render() {
@@ -72,7 +77,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        startSetPosts: () => dispatch(startSetPosts())
+        startSetPosts: () => dispatch(startSetPosts()),
+        setPosts: (posts, count) => dispatch(setPosts(posts, count)),
+        setPages: (pages) => dispatch(setPages(pages))
     };
 };
 

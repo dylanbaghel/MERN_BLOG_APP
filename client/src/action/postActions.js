@@ -2,7 +2,6 @@ import {
     SET_POSTS,
     COUNT_PAGES,
     SET_VIEW_POST,
-    ADD_POST,
     DELETE_POST
 } from './types';
 import axios from 'axios';

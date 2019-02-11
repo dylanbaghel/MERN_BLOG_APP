@@ -19,8 +19,8 @@ class Dashboard extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.setPosts([], 0);
-        this.props.setPages(0);
+        this.props.setPosts([], null);
+        this.props.setPages(null);
     }
 
     render() {

@@ -11,7 +11,7 @@ import Loading from './Loading';
 import NotFound from './NotFound';
 
 class ShowPost extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.startSetViewPost(this.props.match.params.postId);
     }
 
@@ -30,10 +30,7 @@ class ShowPost extends React.Component {
             return <Loading />
         }
         if (!post) {
-            setTimeout(() => {
-                return <NotFound />
-            }, 3000);
-            return <Loading />
+            return <NotFound />
         }
         return (
             <div className="container">
