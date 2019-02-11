@@ -17,12 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
     exposedHeaders: ['Content-Length', 'Authorization']
 }));
-//ROUTES
-app.get('/', (req, res) => {
-    res.json({ data: "All Good" });
-});
-
-
 app.use('/posts', posts);
 app.use('/users', users);
 app.use('/comments', comments);
