@@ -34,7 +34,7 @@ class EditPost extends React.Component {
                     post={post}
                     handleSubmit={(data) => {
                         startEditPost(post._id, data);
-                        history.replace(`/posts/${post._id}`);
+                        history.replace(`/post/${post._id}`);
                     }}
                 />
             </div>

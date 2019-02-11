@@ -50,7 +50,7 @@ const AppRouter = () => {
                         component={EditPost}
                     />
                     <Route
-                        exact path="/posts/:postId"
+                        exact path="/post/:postId"
                         component={ShowPost}
                     />
                     <PublicRoute
