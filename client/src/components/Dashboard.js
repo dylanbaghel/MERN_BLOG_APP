@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { startSetMyPosts } from './../action/postActions';
+import { startSetMyPosts, setPosts, setPages } from './../action/postActions';
 import truncate from './../utils/truncate';
 import Loading from './Loading';
 import ReactPaginate from 'react-js-pagination';
@@ -16,6 +16,11 @@ class Dashboard extends React.Component {
     }
     componentDidMount() {
         this.props.startSetMyPosts();
+    }
+
+    componentWillUnmount() {
+        this.props.setPosts([], 0);
+        this.props.setPages(0);
     }
 
     render() {
@@ -97,7 +102,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        startSetMyPosts: (pageNo) => dispatch(startSetMyPosts(pageNo))
+        startSetMyPosts: (pageNo) => dispatch(startSetMyPosts(pageNo)),
+        setPosts: (posts, count) => dispatch(setPosts(posts, count)),
+        setPages: (pages) => dispatch(setPages(pages))
     };
 };
 

@@ -13,6 +13,9 @@ class EditPost extends React.Component {
         this.props.startSetViewPost(this.props.match.params.postId);
     }
 
+    componentWillUnmount() {
+        this.props.setViewPost(null);
+    }
 
     render() {
         const { post, loading, startEditPost, history, userId } = this.props;
