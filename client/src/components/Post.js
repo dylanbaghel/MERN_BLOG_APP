@@ -13,7 +13,7 @@ const Post = ({
             <div className="card-header">{sn}. {truncate(post.title, 30)}</div>
             <div className="card-body">
                 <p className="card-text">{truncate(stripTags(post.body))}</p>
-                <Link className="btn btn-dark" to={`/posts/${post._id}`}>Show Post</Link>
+                <Link className="btn btn-dark" to={`/post/${post._id}`}>Show Post</Link>
                 <hr/>
                 <div className="chip">{post.author.name}</div>
             </div>
