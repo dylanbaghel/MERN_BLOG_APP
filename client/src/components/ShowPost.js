@@ -31,9 +31,9 @@ class ShowPost extends React.Component {
         }
         if (!post) {
             setTimeout(() => {
-                return <Loading />
+                return <NotFound />
             }, 3000);
-            return <NotFound />
+            return <Loading />
         }
         return (
             <div className="container">
