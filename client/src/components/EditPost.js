@@ -5,6 +5,8 @@ import { startSetViewPost, setViewPost, startEditPost } from './../action/postAc
 
 import PostForm from './PostForm';
 import UnAuthorized from './UnAuthorized';
+import NotFound from './NotFound';
+import Loading from './Loading';
 
 class EditPost extends React.Component {
     componentDidMount() {
@@ -16,19 +18,21 @@ class EditPost extends React.Component {
     }
 
     render() {
-        const { post, startEditPost, history, userId } = this.props;
+        const { post, loading, startEditPost, history, userId } = this.props;
+        if (loading) {
+            return <Loading />;
+        }
         if (!post) {
-            return <div>404 Post Not Found</div>
+            return <NotFound />;
         }
         if (post.author !== userId) {
-            return <UnAuthorized />
+            return <UnAuthorized />;
         }
         return (
             <div className="container">
                 <PostForm 
                     post={post}
                     handleSubmit={(data) => {
-                        console.log(data);
                         startEditPost(post._id, data);
                         history.replace(`/posts/${post._id}`);
                     }}
@@ -41,7 +45,8 @@ class EditPost extends React.Component {
 const mapStateToProps = (state) => {
     return {
         post: state.posts.view,
-        userId: state.auth.userId
+        userId: state.auth.userId,
+        loading: state.loading
     };
 };
 

@@ -18,7 +18,9 @@ import PrivateRoute from './../router/PrivateRoute';
 import PublicRoute from './../router/PublicRoute';
 import AddPost from '../components/AddPost';
 
-export const history = createHistory();
+export const history = createHistory({
+    basename: 'http://mern-blogging-app.herokuapp.com'
+});
 
 const AppRouter = () => {
     return (
