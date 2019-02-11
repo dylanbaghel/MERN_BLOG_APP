@@ -74,7 +74,6 @@ export const startAddPost = (data) => {
         axios
             .post(`${BASE_URL}/posts`, data)
             .then(res => {
-                dispatch(addPost(res.data.newPost));
                 dispatch(setLoading(false));
             })
             .catch(e => {
@@ -135,13 +134,6 @@ export const setPages = (totalPages) => {
     return {
         type: COUNT_PAGES,
         payload: totalPages
-    };
-};
-
-export const addPost = (post) => {
-    return {
-        type: ADD_POST,
-        post
     };
 };
 
